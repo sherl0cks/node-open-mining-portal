@@ -52,6 +52,6 @@
         "node": ">=0.10"
     },
     "scripts": {
-        "run" : "node init.js"
+        "start" : "node init.js"
     }
 }
