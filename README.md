@@ -167,7 +167,7 @@ npm update
 #### 2) Configuration
 
 ##### Portal config
-Inside the `config_example.json` file, ensure the default configuration will work for your environment, then copy the file to `config.json`.
+Inside the `config_example.json` file, ensure the default configuration will work for your environment, then copy the file to `config.json` or load into the environment variable `NOMP_CONFIG`. The environment variable takes precedent to make the application more portable. 
 
 Explanation for each field:
 ````javascript
@@ -490,7 +490,7 @@ For more information on these configuration options see the [pool module documen
 
 
 ##### [Optional, recommended] Setting up blocknotify
-1. In `config.json` set the port and password for `blockNotifyListener`
+1. In `config.json`, or `NOMP_CONFIG`, set the port and password for `blockNotifyListener`
 2. In your daemon conf file set the `blocknotify` command to use:
 ```
 node [path to cli.js] [coin name in config] [block hash symbol]
@@ -526,7 +526,7 @@ the `node-stratum-pool` and `node-multi-hashing` modules, and any config files t
 * Inside your NOMP directory (where the init.js script is) do `git pull` to get the latest NOMP code.
 * Remove the dependenices by deleting the `node_modules` directory with `rm -r node_modules`.
 * Run `npm update` to force updating/reinstalling of the dependencies.
-* Compare your `config.json` and `pool_configs/coin.json` configurations to the latest example ones in this repo or the ones in the setup instructions where each config field is explained. You may need to modify or add any new changes.
+* Compare your `config.json` / `NOMP_CONFIG` and `pool_configs/coin.json` configurations to the latest example ones in this repo or the ones in the setup instructions where each config field is explained. You may need to modify or add any new changes.
 
 Donations
 ---------
