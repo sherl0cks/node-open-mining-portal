@@ -14,7 +14,7 @@ var Website = require('./libs/website.js');
 var ProfitSwitch = require('./libs/profitSwitch.js');
 
 var algos = require('stratum-pool/lib/algoProperties.js');
-var configLoader = require("libs/configLoader.js");
+var configLoader = require("./libs/configLoader.js");
 
 var portalConfig = configLoader.load()
 var poolConfigs;
