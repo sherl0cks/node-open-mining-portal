@@ -14,15 +14,9 @@ var Website = require('./libs/website.js');
 var ProfitSwitch = require('./libs/profitSwitch.js');
 
 var algos = require('stratum-pool/lib/algoProperties.js');
+var configLoader = require("libs/configLoader.js");
 
-JSON.minify = JSON.minify || require("node-json-minify");
-
-if (!fs.existsSync('config.json')){
-    console.log('config.json file does not exist. Read the installation/setup instructions.');
-    return;
-}
-
-var portalConfig = JSON.parse(JSON.minify(fs.readFileSync("config.json", {encoding: 'utf8'})));
+var portalConfig = configLoader.load()
 var poolConfigs;
 
 
