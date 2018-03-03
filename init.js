@@ -25,7 +25,7 @@ var logger = new PoolLogger({
     logColors: portalConfig.logColors
 });
 
-logger.debug(portalConfig.logLevel);
+logger.debug(portalConfig[0].logLevel);
 
 
 try {
