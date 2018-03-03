@@ -382,8 +382,8 @@ var startPaymentProcessor = function(){
 
 var startWebsite = function(){
 
-    logger.debug(portalConfig);
-    
+    logger.debug(portalConfig.website);
+
     if (!portalConfig.website.enabled) return;
 
     var worker = cluster.fork({
