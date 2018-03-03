@@ -17,6 +17,7 @@ var algos = require('stratum-pool/lib/algoProperties.js');
 var configLoader = require("./libs/configLoader.js");
 
 var portalConfig = configLoader.load()
+logger.debug(portalConfig);
 var poolConfigs;
 
 
