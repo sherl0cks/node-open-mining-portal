@@ -5,17 +5,16 @@ function foo(relativePath) {
   // give preference to environment variable
   if (process.env.NOMP_CONFIG) {
     console.log("returning config for env var NOMP_CONFIG");
-    var config = process.env.NOMP_CONFIG;
-    var typeOfConfig = typeof config;
-    console.log(typeOfConfig);
-    return process.env.NOMP_CONFIG;
+    return JSON.parse(JSON.minify(process.env.NOMP_CONFIG));
   } else if (fs.existsSync(relativePath)) {
-    console.log('returning config for ' + relativePath);
+    console.log("returning config for " + relativePath);
     return JSON.parse(
       JSON.minify(fs.readFileSync(relativePath, { encoding: "utf8" }))
     );
   } else {
-      console.error("env var NOMP_CONFIG and config.json file do not exist. Read the installation/setup instructions.")
+    console.error(
+      "env var NOMP_CONFIG and config.json file do not exist. Read the installation/setup instructions."
+    );
     throw Error(
       "env var NOMP_CONFIG and config.json file do not exist. Read the installation/setup instructions."
     );

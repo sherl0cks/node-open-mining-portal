@@ -25,9 +25,6 @@ var logger = new PoolLogger({
     logColors: portalConfig.logColors
 });
 
-logger.debug(portalConfig[0].logLevel);
-
-
 try {
     require('newrelic');
     if (cluster.isMaster)
@@ -381,9 +378,7 @@ var startPaymentProcessor = function(){
 
 
 var startWebsite = function(){
-
-    logger.debug(portalConfig.website);
-
+    
     if (!portalConfig.website.enabled) return;
 
     var worker = cluster.fork({

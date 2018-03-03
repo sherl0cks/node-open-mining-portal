@@ -8,13 +8,17 @@ describe("ConfigLoader", function() {
       var expectedConfig = {
         logLevel: "debug"
       };
-      process.env.NOMP_CONFIG = expectedConfig;
+
+      process.env.NOMP_CONFIG = JSON.stringify(expectedConfig);
 
       // when
       var actualConfig = configLoader.load();
 
       // then
-      assert.equal(actualConfig, expectedConfig);
+      assert.equal(
+        JSON.stringify(actualConfig).trim,
+        JSON.stringify(expectedConfig).trim
+      );
 
       // cleanup
       delete process.env.NOMP_CONFIG;
